@@ -1,10 +1,20 @@
+import { useEffect } from "react";
 import { Footer, FooterContent, Box, H3, NavBar, 
 NavList, List, NavLink, FooterCopy, Copy } from "./styled";
 
 export default function footer() {
+    useEffect(() => {
+        const sr = ScrollReveal({
+            distance: "5rem",
+            duration: 2500,
+            reset: true
+        });
+        sr.reveal(".footer-content", {delay: 300, origin: "bottom"});
+    }, []);
+
     return(
         <Footer>
-            <FooterContent>
+            <FooterContent className="footer-content">
                 <Box>
                     <H3>Getting started</H3>
                     <NavBar>

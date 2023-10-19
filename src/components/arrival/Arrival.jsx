@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Arrival, ArrivalContent, Box, Image, Img,
 H3, H4, Price, Button, Stars } from "./styled";
 import img1 from "../../assets/p1.webp";
@@ -8,8 +9,17 @@ import { BiSolidHeart } from "react-icons/bi";
 import { BiSolidStar } from "react-icons/bi";
 
 export default function arrival() {
+    useEffect(() => {
+        const sr = ScrollReveal({
+            distance: "5rem",
+            duration: 2500,
+            reset: true
+        });
+        sr.reveal(".arrival", {delay: 300, origin: "bottom"});
+    }, []);
+
     return(
-        <Arrival>
+        <Arrival className="arrival">
             <header className="heading">
                 <h2>New arrivals. <span>best selling of the month</span></h2>
             </header>

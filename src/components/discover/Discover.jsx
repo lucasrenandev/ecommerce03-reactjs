@@ -1,11 +1,21 @@
+import { useEffect } from "react";
 import { Discover, DiscoverContent, Box, Text, H4, H3, Image } from "./styled";
 import img1 from "../../assets/d1.png";
 import img2 from "../../assets/d2.png";
 import img3 from "../../assets/d3.png";
 
 export default function discover() {
+    useEffect(() => {
+        const sr = ScrollReveal({
+            distance: "5rem",
+            duration: 2500,
+            reset: true
+        });
+        sr.reveal(".discover", {delay: 300, origin: "bottom"});
+    }, []);
+
     return(
-        <Discover>
+        <Discover className="discover">
             <header className="heading">
                 <h2>Discover more <span>good things</span></h2>
             </header>
